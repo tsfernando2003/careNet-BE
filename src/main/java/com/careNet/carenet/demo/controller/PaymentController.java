@@ -57,4 +57,10 @@ public class PaymentController {
             return ResponseEntity.status(404).body("Payment not found");
         }
     }
+
+    @GetMapping
+    public ResponseEntity<?> getAllPayments() {
+        return ResponseEntity.ok(paymentRepository.findAll());
+    }
+
 }
